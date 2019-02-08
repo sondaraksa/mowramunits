@@ -41,10 +41,7 @@ router.post("/register", (req, res) => {
       //Todo Upload avatar
       const avatar = "";
       const newUser = new User({
-        firstname_en: req.body.firstname_en,
-        surname_en: req.body.surname_en,
-        firstname_kh: req.body.firstname_kh,
-        surname_kh: req.body.surname_kh,
+        username: req.body.username,
         email: req.body.email,
         acc_type: req.body.acc_type,
         avatar,
@@ -93,10 +90,7 @@ router.post("/login", (req, res) => {
         //create jwt payload
         const payload = {
           id: user.id,
-          firstname_en: user.firstname_en,
-          surname_en: user.surname_en,
-          firstname_kh: user.firstname_kh,
-          surname_kh: user.surname_kh,
+          username: user.username,
           acc_type: user.acc_type,
           avatar: user.avatar
         };
@@ -129,10 +123,7 @@ router.get(
   (req, res) => {
     res.json({
       id: req.user.id,
-      firstname_en: req.user.firstname_en,
-      surname_en: req.user.surname_en,
-      firstname_kh: req.user.firstname_kh,
-      surname_kh: req.user.surname_kh,
+      username: req.user.username,
       acc_type: req.user.acc_type,
       email: req.user.email
     });
@@ -154,10 +145,7 @@ router.post(
     //Get Fields
     const userFields = {
       _id: req.user.id,
-      firstname_en: req.user.firstname_en,
-      surname_en: req.user.surname_en,
-      firstname_kh: req.user.firstname_kh,
-      surname_kh: req.user.surname_kh,
+      username: req.user.username,
       email: req.user.email,
       acc_type: req.user.acc_type,
       avatar: req.user.avatar,
@@ -241,13 +229,10 @@ router.post(
     }
     //Get Fields
     const userFields = {
-      firstname_en: req.body.firstname_en,
-      surname_en: req.body.surname_en,
-      firstname_kh: req.body.firstname_kh,
-      surname_kh: req.body.surname_kh,
+      username: req.body.username,
       email: req.body.email,
       acc_type: req.body.acc_type,
-      avatar: req.body.avatar,
+      avatar: "",
       password: req.body.password
     };
 

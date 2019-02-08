@@ -3,19 +3,7 @@ const Schema = mongoose.Schema;
 
 //Create Schema
 const UserSchema = new Schema({
-  firstname_en: {
-    type: String,
-    required: true
-  },
-  surname_en: {
-    type: String,
-    required: true
-  },
-  firstname_kh: {
-    type: String,
-    required: true
-  },
-  surname_kh: {
+  username: {
     type: String,
     required: true
   },
