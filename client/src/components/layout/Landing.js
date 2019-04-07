@@ -10,19 +10,15 @@ class Landing extends Component {
             <div className="container">
               <div className="row">
                 <div className="col-md-12 text-center">
-                  <h1 className="display-3 mb-4">Welcome Mr Son Daraksa</h1>
+                  <h1 className="display-3 mb-4">Mowram Technical Units</h1>
                   <p className="lead">
                     {" "}
-                    Please have a good time creating new project. You do not
-                    have much time. Do it now or you will regret when it is too
-                    late.
+                    Welcome to our site. We are delighted to have you here.
                   </p>
                   <hr />
-                  <Link to="/register" className="btn btn-lg btn-info mr-2">
-                    Sign Up
-                  </Link>
-                  <Link to="/login" className="btn btn-lg btn-light">
-                    Login
+
+                  <Link to="/about-us" className="btn btn-lg btn-info">
+                    Learn More
                   </Link>
                 </div>
               </div>

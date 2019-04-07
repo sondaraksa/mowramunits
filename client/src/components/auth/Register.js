@@ -1,7 +1,62 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 
 class Register extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: "",
+      acc_type: "",
+      password: "",
+      password2: "",
+      errors: {}
+    };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      acc_type: this.state.acc_type,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    this.props.registerUser(newUser, this.props.history);
+  }
+
   render() {
+    const { errors } = this.state;
+
+    //select option for status
+    const options = [
+      { label: "User", value: "user" },
+      { label: "Admin", value: "admin" }
+    ];
+
     return (
       <div>
         <div className="register">
@@ -9,54 +64,52 @@ class Register extends Component {
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h1 className="display-4 text-center">Sign Up</h1>
-                <p className="lead text-center">Create your account</p>
-                <form action="create-profile.html">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="នាម និងគោត្តនាម"
-                      name="kh_name"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="នាម និងគោត្តនាមជាអក្សរឡាតាំង"
-                      name="en_name"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      className="form-control form-control-lg"
-                      placeholder="Email Address"
-                      name="email"
-                    />
-                    <small classNameName="form-text text-muted">
-                      This site uses Gravatar so if you want a profile image,
-                      use a Gravatar email
-                    </small>
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="password"
-                      className="form-control form-control-lg"
-                      placeholder="Password"
-                      name="password"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="password"
-                      className="form-control form-control-lg"
-                      placeholder="Confirm Password"
-                      name="password2"
-                    />
-                  </div>
+                <p className="lead text-center">
+                  Create your DevConnector account
+                </p>
+                <form noValidate onSubmit={this.onSubmit}>
+                  <TextFieldGroup
+                    placeholder="Name"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.onChange}
+                    error={errors.name}
+                  />
+                  <TextFieldGroup
+                    placeholder="Email"
+                    name="email"
+                    type="email"
+                    value={this.state.email}
+                    onChange={this.onChange}
+                    error={errors.email}
+                    info="This site uses Gravatar so if you want a profile image, use a Gravatar email"
+                  />
+
+                  <SelectListGroup
+                    placeholder="Acc Type"
+                    name="acc_type"
+                    value={this.state.acc_type}
+                    onChange={this.onChange}
+                    options={options}
+                    error={errors.status}
+                    info="Give Account Type"
+                  />
+                  <TextFieldGroup
+                    placeholder="Password"
+                    name="password"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.onChange}
+                    error={errors.password}
+                  />
+                  <TextFieldGroup
+                    placeholder="Comfirm Password"
+                    name="password2"
+                    type="password"
+                    value={this.state.password2}
+                    onChange={this.onChange}
+                    error={errors.password2}
+                  />
                   <input
                     type="submit"
                     className="btn btn-info btn-block mt-4"
@@ -71,4 +124,18 @@ class Register extends Component {
   }
 }
 
-export default Register;
+Register.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { registerUser }
+)(withRouter(Register));

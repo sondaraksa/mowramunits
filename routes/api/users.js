@@ -41,7 +41,7 @@ router.post("/register", (req, res) => {
       //Todo Upload avatar
       const avatar = "";
       const newUser = new User({
-        username: req.body.username,
+        name: req.body.name,
         email: req.body.email,
         acc_type: req.body.acc_type,
         avatar,
@@ -90,7 +90,7 @@ router.post("/login", (req, res) => {
         //create jwt payload
         const payload = {
           id: user.id,
-          username: user.username,
+          name: user.name,
           acc_type: user.acc_type,
           avatar: user.avatar
         };
@@ -123,7 +123,7 @@ router.get(
   (req, res) => {
     res.json({
       id: req.user.id,
-      username: req.user.username,
+      name: req.user.name,
       acc_type: req.user.acc_type,
       email: req.user.email
     });
@@ -145,7 +145,7 @@ router.post(
     //Get Fields
     const userFields = {
       _id: req.user.id,
-      username: req.user.username,
+      name: req.user.name,
       email: req.user.email,
       acc_type: req.user.acc_type,
       avatar: req.user.avatar,
@@ -229,7 +229,7 @@ router.post(
     }
     //Get Fields
     const userFields = {
-      username: req.body.username,
+      name: req.body.name,
       email: req.body.email,
       acc_type: req.body.acc_type,
       avatar: "",

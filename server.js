@@ -5,8 +5,12 @@ const passport = require("passport");
 const path = require("path");
 
 const users = require("./routes/api/users");
+const people = require("./routes/api/people");
 
 const app = express();
+
+// public folder
+app.use("/public", express.static(path.join(__dirname, "public")));
 
 //Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,16 +21,14 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to MongooseDB
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongooseDB Connected"))
   .catch(err => console.log(err));
 mongoose.set("useFindAndModify", false);
 
 //Use Routes
 app.use("/api/users", users);
+app.use("/api/people", people);
 
 //Passport Middleware
 app.use(passport.initialize());
