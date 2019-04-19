@@ -12,7 +12,7 @@ class CentralpointUnit extends Component {
               id="1"
               name="Mr.Kang Chanthorn"
               unitPos="Cheif Central Point Unit"
-              mowramPos="Deputy Chief Department"
+              mowramPos="Deputy Chief Department / MOWRAM"
               imgUrl={NoImageUrl}
             />
           </div>
@@ -21,37 +21,37 @@ class CentralpointUnit extends Component {
           <div className="col-md-3">
             <CardItems
               id="1"
-              name="Mr.Kang Chanthorn"
-              unitPos="Cheif Central Point Unit"
-              mowramPos="Deputy Chief Department"
-              imgUrl={NoImageUrl}
+              name="Mr.Lim Pitou"
+              unitPos="Member"
+              mowramPos="Deputy Chief Office / MOWRAM"
+              imgUrl="lim_pitou.jpg"
             />
           </div>
           <div className="col-md-3">
             <CardItems
               id="1"
-              name="Mr.Kang Chanthorn"
-              unitPos="Cheif Central Point Unit"
-              mowramPos="Deputy Chief Department"
-              imgUrl={NoImageUrl}
+              name="Mr.Kang Chansometh"
+              unitPos="Member"
+              mowramPos="Deputy Chief Office / MOWRAM"
+              imgUrl="kang_chansometh.jpg"
             />
           </div>
           <div className="col-md-3">
             <CardItems
               id="1"
-              name="Mr.Kang Chanthorn"
-              unitPos="Cheif Central Point Unit"
-              mowramPos="Deputy Chief Department"
-              imgUrl={NoImageUrl}
+              name="Mr.Kang Sovichea"
+              unitPos="Member"
+              mowramPos="Deputy Chief Office / MOWRAM"
+              imgUrl="kang_sovichea.jpg"
             />
           </div>
           <div className="col-md-3">
             <CardItems
               id="1"
-              name="Mr.Kang Chanthorn"
-              unitPos="Cheif Central Point Unit"
-              mowramPos="Deputy Chief Department"
-              imgUrl={NoImageUrl}
+              name="Mr.Long Vichea"
+              unitPos="Member"
+              mowramPos="Deputy Chief Office / MOWRAM"
+              imgUrl="long_vichea.jpg"
             />
           </div>
         </div>
