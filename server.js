@@ -1,16 +1,28 @@
 const express = require("express");
+const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const path = require("path");
 
 const users = require("./routes/api/users");
-const people = require("./routes/api/people");
+const profiles = require("./routes/api/profiles");
+const articles = require("./routes/api/articles");
 
 const app = express();
 
 // public folder
 app.use("/public", express.static(path.join(__dirname, "public")));
+
+//Upload File
+app.use(
+  fileUpload({
+    createParentPath: true,
+    limits: {
+      fileSize: 20 * 1024 * 1024 * 1024 //20MB max file(s) size
+    }
+  })
+);
 
 //Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,7 +40,8 @@ mongoose.set("useFindAndModify", false);
 
 //Use Routes
 app.use("/api/users", users);
-app.use("/api/people", people);
+app.use("/api/profiles", profiles);
+app.use("/api/articles", articles);
 
 //Passport Middleware
 app.use(passport.initialize());

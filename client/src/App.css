@@ -7,6 +7,7 @@ img {
   background: url("./img/showcase.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  /* height: 45vh; */
   height: 92vh;
   margin-top: -24px;
   margin-bottom: -50px;
@@ -104,8 +105,8 @@ img {
   /* width: auto; */
   /* padding: 0% 0% 0% 0%; */
   margin: 0% 0% -20% 0%;
-  width: auto;
-  /* height: 500px; */
+  /* width: auto; */
+  /* height: 800px; */
 }
 .CententDetail {
   padding: 20px 0 0 0;

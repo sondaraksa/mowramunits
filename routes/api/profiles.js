@@ -3,15 +3,15 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
 
-//Load People Model
-const People = require("../../models/People");
+//Load Profile Model
+const Profile = require("../../models/Profile");
 //Load User Model
 const User = require("../../models/User");
 
 //@route    GET api/people/test
 //@desc     Tests people route
 //@access   Public
-router.get("/test", (req, res) => res.json({ msg: "People works" }));
+router.get("/test", (req, res) => res.json({ msg: "Profile works" }));
 
 // @route    GET api/people/all
 // @desc     Get all people
@@ -26,7 +26,7 @@ router.get("/all", (req, res) => {
       }
       res.json(people);
     })
-    .catch(err => res.status(404).json({ people: "There are no people" }));
+    .catch(err => res.status(404).json({ people: "There are no profile" }));
 });
 
 //@route    POST api/people

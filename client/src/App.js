@@ -8,7 +8,15 @@ import store from "./store";
 
 import PrivateRoute from "./components/common/PrivateRoute";
 
-import Frontend from "./components/Frontend";
+import Landing from "./components/layout/Landing";
+import DirectorMessage from "./components/aboutus/DirectorMessage";
+import AboutUs from "./components/aboutus/AboutUs";
+import Profile from "./components/aboutus/Profile";
+
+import Articles from "./components/articles/Articles";
+import Article from "./components/article/Article";
+
+// import Frontend from "./components/Frontend";
 import Backend from "./components/Backend";
 import Login from "./components/auth/Login";
 import "./App.css";
@@ -43,8 +51,14 @@ class App extends Component {
         <Router>
           <div className="App">
             <Route exact path="/login" component={Login} />
-            <Route exact path="/" component={Frontend} />
-            <PrivateRoute exact path="/admin" component={Backend} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/director-message" component={DirectorMessage} />
+            <Route exact path="/about-us" component={AboutUs} />
+            <Route exact path="/profile/:id" component={Profile} />
+            <Route exact path="/articles" component={Articles} />
+            <Route exact path="/articles/:id" component={Article} />
+            {/* <Route exact path="/articles/1" component={ArticleDetail} /> */}
+            <PrivateRoute path="/admin" component={Backend} />
           </div>
         </Router>
       </Provider>

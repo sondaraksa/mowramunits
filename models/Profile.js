@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Create Schema
-const PeopleSchema = new Schema({
+const ProfileSchema = new Schema({
   created_by: {
     type: Schema.Types.ObjectId,
     ref: "users"
@@ -140,4 +140,4 @@ const PeopleSchema = new Schema({
   }
 });
 
-module.exports = People = mongoose.model("people", PeopleSchema);
+module.exports = Profile = mongoose.model("profiles", ProfileSchema);

@@ -18,14 +18,14 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      window.location.href = "/admin";
+      window.location.href = "/admin/dashbaord";
       // this.props.history.push("/admin");
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      window.location.href = "/admin";
+      window.location.href = "/admin/dashbaord";
       // this.props.history.push("/admin");
     }
     if (nextProps.errors) {

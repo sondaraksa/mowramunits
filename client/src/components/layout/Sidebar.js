@@ -11,19 +11,19 @@ class Sidebar extends Component {
           <div className="list-group list-group-flush">
             <Link
               className="list-group-item list-group-item-action bg-light"
-              to="/admin"
+              to="/dashbaord"
             >
               <i className="fas fa-cog" /> Dashboard
             </Link>
             <Link
               className="list-group-item list-group-item-action bg-light"
-              to="/admin/pages"
+              to="/pages"
             >
               <i className="fas fa-pencil-alt" /> Pages
             </Link>
             <Link
               className="list-group-item list-group-item-action bg-light"
-              to="/admin/profiles"
+              to="/profiles"
             >
               <i className="fas fa-user-alt" /> Profiles
             </Link>

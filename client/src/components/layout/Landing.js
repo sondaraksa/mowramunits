@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../../components/layout/Navbar";
+import FooterContainer from "../../components/layout/FooterContainer";
+import Footer from "../../components/layout/Footer";
 
 class Landing extends Component {
   render() {
     return (
       <div>
+        <NavBar />
         <div className="landing">
           <div className="dark-overlay landing-inner text-light">
             <div className="container">
@@ -25,6 +29,8 @@ class Landing extends Component {
             </div>
           </div>
         </div>
+        <FooterContainer />
+        <Footer />
       </div>
     );
   }
