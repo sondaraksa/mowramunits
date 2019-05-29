@@ -17,9 +17,9 @@ class Sidebar extends Component {
             </Link>
             <Link
               className="list-group-item list-group-item-action bg-light"
-              to="/pages"
+              to="/articles"
             >
-              <i className="fas fa-pencil-alt" /> Pages
+              <i className="fas fa-pencil-alt" /> Articles
             </Link>
             <Link
               className="list-group-item list-group-item-action bg-light"

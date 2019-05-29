@@ -1,35 +1,51 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 import NavBar from "../layout/Navbar";
 import FooterContainer from "../layout/FooterContainer";
 import Footer from "../layout/Footer";
+import ReactPaginate from "react-paginate";
 
 import ArticleItem from "./ArticleItem";
 import Spinner from "../common/Spinner";
-
-import { getArticles } from "../../actions/articleActions";
+import "./Article.css";
+import { getArticlesLimitOffset } from "../../actions/articleActions";
 
 class Articles extends Component {
-  componentDidMount() {
-    this.props.getArticles();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      offset: 0,
+      perPage: 3,
+      pageCount: 4
+    };
   }
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.article.article === null && this.props.article.loading) {
-  //     this.props.history.push("/not-found");
-  //   }
-  // }
+  componentDidMount() {
+    this.props.getArticlesLimitOffset(this.state.perPage, this.state.offset);
+  }
+
+  handlePageClick = data => {
+    let selected = data.selected;
+    let offset = Math.ceil(selected * this.state.perPage);
+    this.setState({ offset: offset }, () => {
+      this.props.getArticlesLimitOffset(this.state.perPage, this.state.offset);
+    });
+  };
 
   render() {
     const { articles, loading } = this.props.article;
     let articleItems;
+    let pageCount;
+
     if (articles === null || loading) {
       articleItems = <Spinner />;
     } else {
-      if (articles.length > 0) {
-        articleItems = articles.map(article => (
+      pageCount = Math.ceil(articles.meta.total_count / articles.meta.limit);
+      if (articles.article.length > 0) {
+        articleItems = articles.article.map(article => (
           <ArticleItem key={article._id} article={article} />
         ));
       } else {
@@ -54,6 +70,25 @@ class Articles extends Component {
               />
             </div>
           </div>
+          <div id="react-paginate" className="row react-paginate">
+            <ReactPaginate
+              previousLabel={"previous"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={5}
+              onPageChange={this.handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              pageLinkClassName={"page-item page-link"}
+              previousLinkClassName={"page-item page-link"}
+              nextLinkClassName={"page-item page-link"}
+              activeLinkClassName={"page-item active"}
+              activeClassName={"page-item active"}
+            />
+          </div>
         </div>
         <FooterContainer />
         <Footer />
@@ -63,7 +98,7 @@ class Articles extends Component {
 }
 
 Articles.propTypes = {
-  getArticles: PropTypes.func.isRequired,
+  getArticlesLimitOffset: PropTypes.func.isRequired,
   article: PropTypes.object.isRequired
 };
 
@@ -73,5 +108,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getArticles }
+  { getArticlesLimitOffset }
 )(Articles);

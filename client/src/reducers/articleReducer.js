@@ -1,9 +1,4 @@
-import {
-  GET_ARTICLE,
-  GET_ARTICLES,
-  ARTICLE_LOADING,
-  CLEAR_CURRENT_ARTICLE
-} from "../actions/types";
+import { GET_ARTICLE, GET_ARTICLES, ARTICLE_LOADING } from "../actions/types";
 
 const initialState = {
   article: null,
@@ -30,11 +25,7 @@ export default function(state = initialState, action) {
         articles: action.payload,
         loading: false
       };
-    case CLEAR_CURRENT_ARTICLE:
-      return {
-        ...state,
-        article: null
-      };
+
     default:
       return state;
   }

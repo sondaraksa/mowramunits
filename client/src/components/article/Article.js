@@ -17,11 +17,11 @@ class Article extends Component {
       this.props.getArticleByArticleId(this.props.match.params.id);
     }
   }
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.article.article === null && this.props.article.loading) {
-  //     this.props.history.push("/not-found");
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.article.article === null && this.props.article.loading) {
+      this.props.history.push("/not-found");
+    }
+  }
 
   render() {
     const { article, loading } = this.props.article;

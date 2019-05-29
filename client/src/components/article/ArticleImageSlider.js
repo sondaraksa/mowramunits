@@ -6,13 +6,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 class ArticleImageSlider extends Component {
   render() {
     const { media } = this.props;
-    const imgItems = media.map(data => (
-      <div>
-        <img
-          src={process.env.PUBLIC_URL + `/uploads/${data.name}`}
-          alt={data.name}
-        />
-      </div>
+    const imgItems = media.map((data, index) => (
+      <img
+        key={index}
+        src={process.env.PUBLIC_URL + `/uploads/${data.name}`}
+        alt={data.name}
+      />
     ));
 
     return (
@@ -30,6 +29,6 @@ class ArticleImageSlider extends Component {
 }
 
 ArticleImageSlider.propTypes = {
-  article: PropTypes.object.isRequired
+  media: PropTypes.array.isRequired
 };
 export default ArticleImageSlider;

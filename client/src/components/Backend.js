@@ -8,9 +8,10 @@ import { logoutUser } from "../actions/authActions";
 import no_avatar from "../img/no_avatar.png";
 import Sidebar from "./layout/Sidebar";
 import Dashboard from "./admin/Dashboard";
-import Pages from "./admin/Pages";
+import Articles from "./admin/article/Articles";
 import Profiles from "./admin/Profiles";
-import CreateProfile from "./admin/create-profile";
+import CreateArticle from "./admin/article/CreateArticle";
+import EditArticle from "./admin/article/EditArticle";
 
 class Backend extends Component {
   onLogoutClick(e) {
@@ -120,9 +121,10 @@ class Backend extends Component {
               {/* <Switch> */}
               {/* content goes here */}
               <Route exact path="/dashbaord" component={Dashboard} />
-              <Route path="/pages" component={Pages} />
-              <Route path="/profiles" component={Profiles} />
-              <Route path="/create-profile" component={CreateProfile} />
+              <Route exact path="/articles" component={Articles} />
+              <Route exact path="/articles/:_id" component={EditArticle} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/create-article" component={CreateArticle} />
               {/* end of content */}
               {/* </Switch> */}
             </div>
