@@ -86,7 +86,7 @@ class AboutUs extends Component {
                   <div className="col-lg-12 text-center">
                     <CardItems
                       id="1"
-                      name="Mr.Lim Canberra"
+                      name="Mr. Lim Canberra"
                       unitPos="Units Director"
                       mowramPos="Deputy Director General for Administration Affair / MOWRAM "
                       imgUrl="berra_lim.jpg"

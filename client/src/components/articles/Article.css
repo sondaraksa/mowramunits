@@ -7,3 +7,92 @@
 #react-paginate li {
   display: inline-block;
 }
+
+.mycard {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.ImageArticleText {
+  padding-top: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* News */
+.NewsImageSection {
+  /* background: red; */
+  text-align: center;
+}
+.NewsContentSection {
+  margin: 0px 0px 0px 0px;
+}
+.NewsContentSection h5 {
+  font-size: 17px !important;
+  font-family: "Khmer Os System", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+  color: black;
+  text-align: left;
+}
+.NewsContentSection p {
+  font-size: 15px !important;
+  font-family: "Khmer Os System", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+  color: grey;
+}
+.NewsSearchSection {
+  /* background: green; */
+}
+.NewsDetail {
+  padding: 0% 10% 0% 10%;
+}
+.NewsDetail img {
+  margin: 0% 0% -20% 0%;
+}
+.CententDetail {
+  padding: 20px 0 0 0;
+}
+.NewsDetail h3 {
+  padding: 15px 15px 0px 10px;
+  font-size: 20px !important;
+  font-family: "Khmer Os System", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #4275ab;
+  text-align: justify;
+}
+.NewsContent {
+  padding: 15px 15px 0px 10px;
+  font-size: 16px !important;
+  font-family: "Khmer Os System", cursive;
+  font-weight: 500;
+  line-height: 1.4;
+  color: black;
+  text-align: justify;
+}
+
+.DatePost {
+  font-weight: 500;
+  text-align: left;
+  font-family: "Khmer Os Muol Light";
+  /* width: 140px; */
+  color: black;
+  display: block;
+  /* background: #a9a9a9; */
+}
+.page-link {
+  color: black;
+}
+.page-item.active .page-link {
+  background-color: #232323;
+  border-color: #a9a9a9;
+}

@@ -5,7 +5,7 @@ import "../../../node_modules/flag-icon-css/css/flag-icon.css";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <div className="container">
           <Link className="navbar-brand" to="/">
             Mowram Technical Units

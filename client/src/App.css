@@ -9,7 +9,7 @@ img {
   background-position: center;
   /* height: 45vh; */
   height: 92vh;
-  margin-top: -24px;
+  margin-top: -8px;
   margin-bottom: -50px;
 }
 
@@ -44,111 +44,12 @@ img {
   height: 100%;
 }
 
-.footer-container {
+/* .footer-container {
   margin-top: 50px;
   margin-bottom: 50px;
   height: 100%;
-  /* background: #4a97d6; */
-}
-.footer-item {
+  background: #4a97d6;
+} */
+/* .footer-item {
   border-bottom-style: none !important;
-}
-
-.mycard {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.ImageArticleText {
-  padding-top: 70px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/* News */
-.NewsImageSection {
-  /* background: red; */
-  text-align: center;
-}
-.NewsContentSection {
-  margin: 0px 0px 0px 0px;
-}
-.NewsContentSection h5 {
-  font-size: 17px !important;
-  font-family: "Khmer Os System", cursive;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #4275ab;
-  text-align: left;
-}
-.NewsContentSection p {
-  font-size: 15px !important;
-  font-family: "Khmer Os System", cursive;
-  font-weight: 500;
-  line-height: 1.4;
-  color: grey;
-}
-.NewsSearchSection {
-  /* background: green; */
-}
-.NewsDetail {
-  padding: 0% 10% 0% 10%;
-}
-.NewsDetail img {
-  /* width: auto; */
-  /* padding: 0% 0% 0% 0%; */
-  margin: 0% 0% -20% 0%;
-  /* width: auto; */
-  /* height: 800px; */
-}
-.CententDetail {
-  padding: 20px 0 0 0;
-}
-.NewsDetail h3 {
-  padding: 0px 15px 0px 10px;
-  font-size: 20px !important;
-  font-family: "Khmer Os System", cursive;
-  font-weight: 500;
-  line-height: 1.4;
-  color: #4275ab;
-  text-align: justify;
-}
-.NewsDetail p {
-  padding: 15px 15px 0px 10px;
-  font-size: 16px !important;
-  font-family: "Khmer Os System", cursive;
-  font-weight: 500;
-  line-height: 1.4;
-  color: black;
-  text-align: justify;
-}
-
-.DatePost {
-  padding: 20px 0px 0px 0px;
-  font-weight: 500;
-  width: 60px;
-  text-align: center;
-  font-family: "Khmer Os Muol Light";
-}
-.DatePost span.day {
-  display: block;
-  color: #0088cc;
-  background: #f4f4f4;
-  padding: 5px 0;
-}
-
-.DatePost span.year {
-  display: block;
-  color: #fff;
-  background: #0088cc;
-  box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.07) inset;
-  font-size: 0.9em;
-  padding: 5px 0 0 2px;
-}
+} */

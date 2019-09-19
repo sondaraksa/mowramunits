@@ -106,6 +106,7 @@ router.get("/", (req, res) => {
   let json;
 
   Article.find()
+    .sort({ date: -1 })
     .then(article => {
       if (!article) {
         errors.noarticle = "There are no article";

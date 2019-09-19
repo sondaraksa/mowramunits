@@ -10,7 +10,6 @@ class Profile extends Component {
     return (
       <div>
         <NavBar />
-
         <div className="profile">
           <div className="container">
             <div className="row">

@@ -9,9 +9,9 @@ class ArticleItem extends Component {
     let dateContent = <Moment format="YYYY/MM/DD">{article.date}</Moment>;
     return (
       <div className="row">
-        <div className="col-4 mb-3">
+        <div className="col-4 mb-2">
           <img
-            className="d-block w-100"
+            className="d-block w-55"
             src={process.env.PUBLIC_URL + `/uploads/${article.media[0].name}`}
             alt="First slide"
           />
@@ -20,8 +20,7 @@ class ArticleItem extends Component {
           <Link to={`/articles/${article._id}`}>
             <h5 className="row">{article.title}</h5>
           </Link>
-
-          <p className="row text-left">{dateContent}</p>
+          <div className="row DatePost">Posted Date: {dateContent}</div>
         </div>
       </div>
     );

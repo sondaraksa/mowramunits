@@ -1,0 +1,18 @@
+.stylish-color-dark {
+  background-color: #3e4551 !important;
+}
+footer.page-footer {
+  bottom: 0;
+  color: #fff;
+}
+.font-small {
+  font-size: 0.9rem;
+}
+.pt-4,
+.py-4 {
+  padding-top: 1.5rem !important;
+}
+
+footer.page-footer a {
+  color: #fff;
+}

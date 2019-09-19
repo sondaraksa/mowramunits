@@ -54,10 +54,7 @@ class DirectorMessage extends Component {
                       the country’s economy particularly in rice production.
                       Hence, the UIWRMSP is a good strategy for us to alleviate
                       farmers from poverty through increased agricultural
-                      production and profitability as the project strengthens
-                      their capacities in managing resources to support other
-                      economic needs through livelihood and food for work
-                      projects.
+                      production and profitability as the project.
                     </p>
                   </div>
                 </div>

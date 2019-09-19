@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
@@ -36,10 +37,13 @@ class Article extends Component {
             <span className="day">១៥</span>
             <span className="year">មីនា</span>
           </div> */}
-          <div className="CententDetail">
+          <div className="contentDetail">
             <h3 className="row">{article.title}</h3>
-
-            <p className="row text-align">{article.content}</p>
+            <div
+              dangerouslySetInnerHTML={{ __html: article.content }}
+              id="content"
+              className="row NewsContent"
+            />
           </div>
         </div>
       );
@@ -51,8 +55,8 @@ class Article extends Component {
         <div className="container NewsDetail">
           <h1 className="text-center">NEWS CENTER</h1>
           <hr />
-          <Link to="/articles" className="btn btn-primary">
-            News
+          <Link to="/articles" className="btn btn-light">
+            Back
           </Link>
           <br />
           <br />

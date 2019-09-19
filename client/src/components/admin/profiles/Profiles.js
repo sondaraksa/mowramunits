@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Modal from "../common/Modal";
+import Modal from "../../common/Modal";
 
 class Profiles extends Component {
   render() {
@@ -18,7 +18,7 @@ class Profiles extends Component {
           <h1>Profiles</h1>
 
           <div id="subMenuProfile">
-            <Link to="/admin/create-profile" className="btn btn-primary btn-md">
+            <Link to="/create-profile" className="btn btn-primary btn-md">
               <i className="fas fa-user-plus" /> New Profile
             </Link>
           </div>

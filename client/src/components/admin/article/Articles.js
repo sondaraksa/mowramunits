@@ -24,7 +24,7 @@ class Articles extends Component {
     const { articles, loading } = this.props.article;
     const article_data = (articles || []).map((data, index) => {
       // data.seq = index + 1; //Try to add squence but fail logic at sort other columns
-      data.date = moment(data.date).format("DD-MM-YYYY");
+      data.date = moment(data.date).format("YYYY-MM-DD, h:mm:ss a");
       return data;
     });
     const { SearchBar } = Search;
@@ -44,7 +44,7 @@ class Articles extends Component {
     const defaultSorted = [
       {
         dataField: "date",
-        order: "desc"
+        order: "desc" //asc
       }
     ];
 
@@ -138,7 +138,7 @@ class Articles extends Component {
     };
     const rowEvents = {
       onDoubleClick: (e, row, rowIndex) => {
-        console.log(`clicked on row with index: ${rowIndex} and ${row._id}`);
+        // console.log(`clicked on row with index: ${rowIndex} and ${row._id}`);
         // <Link to={`/articles/${row._id}`}>View Profile</Link>;
         window.location.href = `/admin/articles/${row._id}`;
       }

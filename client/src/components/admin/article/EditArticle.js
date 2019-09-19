@@ -4,8 +4,10 @@ import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import TextFieldGroup from "../../common/TextFieldGroup";
-import TextAreaFieldGroup from "../../common/TextAreaFieldGroup";
 import { getArticleByArticleId } from "../../../actions/articleActions";
+
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 class EditArticle extends Component {
   constructor(props) {
@@ -34,7 +36,6 @@ class EditArticle extends Component {
 
     if (nextProps.article.article) {
       const article = nextProps.article.article;
-      console.log(article);
       // Set component fields state
       this.setState({
         title: article.title,
@@ -55,13 +56,16 @@ class EditArticle extends Component {
   };
 
   onSubmit(e) {
+    console.log(this.state);
     e.preventDefault();
     let formData = new FormData();
+
     formData.append("title", this.state.title);
     formData.append("content", this.state.content);
 
     if (this.state.photos) {
       for (var x = 0; x < this.state.photos.length; x++) {
+        console.log(this.state.photos[x].name);
         formData.append(
           "file",
           this.state.photos[x],
@@ -69,15 +73,6 @@ class EditArticle extends Component {
         );
       }
     }
-    // this.props.createArticle(
-    //   formData,
-    //   {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data"
-    //     }
-    //   },
-    //   this.props.history
-    // );
   }
 
   render() {
@@ -99,6 +94,7 @@ class EditArticle extends Component {
         </div>
       ));
     }
+
     return (
       <div>
         <nav aria-label="breadcrumb">
@@ -129,12 +125,29 @@ class EditArticle extends Component {
                 </div>
                 <div className="form-group">
                   <label>Content</label>
-                  <TextAreaFieldGroup
-                    placeholder="Content"
-                    name="content"
-                    value={this.state.content}
-                    onChange={this.onChange}
-                    error={errors.content}
+                  <CKEditor
+                    editor={ClassicEditor}
+                    data={this.state.content}
+                    // config={{
+                    //   placeholder: "Type the content here!"
+                    // }}
+                    onInit={editor => {
+                      // You can store the "editor" and use when it is needed.
+                      // console.log("Editor is ready to use!", editor);
+                    }}
+                    onChange={(event, editor) => {
+                      const data = editor.getData();
+                      this.setState({ content: data });
+
+                      // console.log({ event, editor, data });
+                      // console.log("hello" + this.state.content);
+                    }}
+                    onBlur={editor => {
+                      // console.log("Blur.", editor);
+                    }}
+                    onFocus={editor => {
+                      // console.log("Focus.", editor);
+                    }}
                   />
                 </div>
                 <div className="form-group">

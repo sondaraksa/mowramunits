@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-//import CardImage from "../../img/profileImages/berra_lim.jpg";
+import "./card.css";
 
 const CardItem = ({ id, name, unitPos, mowramPos, imgUrl }) => {
   return (

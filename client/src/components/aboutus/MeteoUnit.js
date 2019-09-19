@@ -10,8 +10,8 @@ class MeteoUnit extends Component {
           <div className="col-lg-12 text-center">
             <CardItems
               id="1"
-              name="Mr.Kang Chanthorn"
-              unitPos="Cheif Central Point Unit"
+              name="Mr.Korng Youtrai"
+              unitPos="Cheif Meteorology Unit"
               mowramPos="Deputy Chief Department"
               imgUrl={NoImageUrl}
             />
